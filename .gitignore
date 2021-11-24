@@ -4,8 +4,8 @@ __pycache__/
 *$py.class
 *.swp
 static/
-migrations/
-# C extensions
+
+# C extension
 *.so
 
 # Distribution / packaging
