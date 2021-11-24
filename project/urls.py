@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings
+from django.conf.urls.static import static 
+
 from rest_framework.routers import DefaultRouter
 from habibi.views import *
 
 from drf_yasg import openapi
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -40,9 +44,14 @@ schema_view = get_schema_view(
 
 router = DefaultRouter()
 router.register('Kiyimlar', KiyimlarViewSet)
+router.register('category', CategoryViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('view/', include(router.urls)),
+    path('', include(router.urls)),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc')
 ]
+
+urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

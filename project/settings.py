@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-enor@#sw=^#8*q*q$d0syyx2hsm(%emr4i8(rj$5ik7s-pdtu$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['81.95.232.205', 'habibi.uz']
-
+# ALLOWED_HOSTS = ['81.95.232.205', 'habibi.uz']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -129,7 +129,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static-files')
+MEDIA_URL = 'media/'
+MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

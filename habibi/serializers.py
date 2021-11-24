@@ -9,6 +9,7 @@ class KiyimlarSerializer(serializers.ModelSerializer):
 
 class CategorySerializer(serializers.ModelSerializer):
     category = KiyimlarSerializer(read_only=True, many=True)
+    
     class Meta():
         model = Category
         fields = '__all__'

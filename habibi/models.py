@@ -8,7 +8,7 @@ class Kiyimlar(models.Model):
     image = models.ImageField()
     size = models.IntegerField(default=0)
     number = models.IntegerField(default=0)
-    category = models.ForeignKey('Category', on_delete=models.PROTECT)
+    category = models.ForeignKey('Category', related_name="category", on_delete=models.PROTECT)
 
     class Meta():
         verbose_name = 'Kiyim'
@@ -23,3 +23,6 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['name']
+
+    def __str__(self):
+        return self.name 

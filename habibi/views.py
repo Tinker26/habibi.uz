@@ -24,3 +24,8 @@ class KiyimlarViewSet(viewsets.ModelViewSet):
     ordering = ['price']
     search_fields = ['^name']
     filterset_fields = ['name','price']
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
