@@ -18,7 +18,7 @@ class KiyimlarViewSet(viewsets.ModelViewSet):
     queryset = Kiyimlar.objects.all()
     serializer_class = KiyimlarSerializer
     # authentication_classes = [BasicAuthentication]
-    permission_classes = [ DjangoModelPermissions]
+    # permission_classes = [ DjangoModelPermissions]
     filter_backends = [filters.OrderingFilter,DjangoFilterBackend,filters.SearchFilter]
     ordering_fields = ['name','price']
     ordering = ['price']
