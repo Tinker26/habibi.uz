@@ -4,7 +4,10 @@ __pycache__/
 *$py.class
 *.swp
 static/
+*.pyc
 
+# meida
+media/
 # C extension
 *.so
 
@@ -130,3 +133,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+*.pyc
+*.sqlite3
