@@ -1,5 +1,5 @@
 from django.contrib import admin
-from habibi.models import Kiyimlar
+from habibi.models import *
 # Register your models here.
 class KiyimlarAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'image','content','size','number')
@@ -11,4 +11,5 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display_links = ('name',)
     search_fields = ('name',)
 
-admin.site.register(Kiyimlar,CategoryAdmin)
+admin.site.register(Kiyimlar)
+admin.site.register(Category,CategoryAdmin)
