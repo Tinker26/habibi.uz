@@ -23,6 +23,11 @@ class Category(models.Model):
 
     class Meta():
         ordering = ['name']
+    
+    class Meta():
+        verbose_name = 'Categorya'
+        verbose_name_plural = 'Categoryalar'
+        ordering = ['name']
 
     def __str__(self):
         return self.name 
@@ -34,6 +39,11 @@ class Aloqa(models.Model):
     massage = models.TextField(default=0)
 
     class Meta():
+        ordering = ['name']
+    
+    class Meta():
+        verbose_name = 'Aloqa'
+        verbose_name_plural = 'Aloqalar'
         ordering = ['name']
 
     def __str__(self):
