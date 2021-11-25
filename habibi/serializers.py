@@ -13,3 +13,8 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta():
         model = Category
         fields = '__all__'
+    
+class AloqaSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = Aloqa
+        fields = '__all__'

@@ -45,6 +45,7 @@ schema_view = get_schema_view(
 router = DefaultRouter()
 router.register('Kiyimlar', KiyimlarViewSet)
 router.register('category', CategoryViewSet)
+router.register('aloqa', AloqaViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -29,3 +29,13 @@ class KiyimlarViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+
+class AloqaViewSet(viewsets.ModelViewSet):
+    queryset = Aloqa.objects.all()
+    serializer_class = AloqaSerializer
+    filter_backends = [filters.OrderingFilter,DjangoFilterBackend,filters.SearchFilter]
+    ordering_fields = ['name','subject']
+    ordering = ['subject']
+    search_fields = ['^name','subject']
+    filterset_fields = ['name','subject']
