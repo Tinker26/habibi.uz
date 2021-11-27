@@ -27,8 +27,8 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['81.95.232.205', 'habibi.uz','127.0.0.1']
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['*'] CORS_ORIGIN_ALLOW_ALL = True
-
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
