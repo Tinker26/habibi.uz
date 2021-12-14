@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 
 from rest_framework.routers import DefaultRouter
 from habibi.views import *
-from product.views import *
 
 from drf_yasg import openapi
 from rest_framework import permissions
@@ -46,18 +45,15 @@ schema_view = get_schema_view(
 router = DefaultRouter()
 router.register('Kiyimlar', KiyimlarViewSet)
 router.register('category', CategoryViewSet)
-router.register('aloqa', AloqaViewSet)
-router.register('product', ProductViewSet)
-router.register('product-category', ProductCategoryViewSet)
 router.register('cardItem', CardItemViewSet)
 router.register('card', CardViewSet)
+router.register('aloqa', AloqaViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('', include("product.urls")),
     path('',include("account.urls")),
 ]
 

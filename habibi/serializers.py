@@ -18,3 +18,15 @@ class AloqaSerializer(serializers.ModelSerializer):
     class Meta():
         model = Aloqa
         fields = '__all__'
+
+class CardItemSerializer(serializers.ModelSerializer):    
+
+    class Meta():
+        model = CardItem
+        fields = '__all__'
+ 
+class CardSerializer(serializers.ModelSerializer):    
+    carditems = CardItemSerializer(read_only=True, many=True)
+    class Meta():
+        model = Card
+        fields = '__all__'

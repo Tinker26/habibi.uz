@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'drf_yasg',
     'knox',
     'account',
-    'product'
 ]
 
 REST_FRAMEWORK = {

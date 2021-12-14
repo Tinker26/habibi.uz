@@ -39,3 +39,11 @@ class AloqaViewSet(viewsets.ModelViewSet):
     ordering = ['subject']
     search_fields = ['^name','subject']
     filterset_fields = ['name','subject']
+
+class CardItemViewSet(viewsets.ModelViewSet):
+    queryset = CardItem.objects.all()
+    serializer_class = CardItemSerializer        
+
+class CardViewSet(viewsets.ModelViewSet):
+    queryset = Card.objects.all()
+    serializer_class = CardSerializer
