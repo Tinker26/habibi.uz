@@ -43,7 +43,9 @@ class AloqaViewSet(viewsets.ModelViewSet):
 class CardItemViewSet(viewsets.ModelViewSet):
     queryset = CardItem.objects.all()
     serializer_class = CardItemSerializer        
-
+    permission_classes = [IsAuthenticated]
+    
 class CardViewSet(viewsets.ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
+    permission_classes = [IsAuthenticated]
