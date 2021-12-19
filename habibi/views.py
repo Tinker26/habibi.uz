@@ -10,21 +10,21 @@ from rest_framework import viewsets
 
 # Create your views here.
 
-class KiyimlarPageNumberPaginations(PageNumberPagination):
-    page_size = 3
-
+class LargeResultsSetPagination(PageNumberPagination):
+    page_size = 6
+    page_size_query_param = 'page_size'
+    max_page_size = 10000
 
 class KiyimlarViewSet(viewsets.ModelViewSet):
     queryset = Kiyimlar.objects.all()
     serializer_class = KiyimlarSerializer
-    # authentication_classes = [BasicAuthentication]
-    # permission_classes = [ DjangoModelPermissions]
+    pagination_class = LargeResultsSetPagination
     filter_backends = [filters.OrderingFilter,DjangoFilterBackend,filters.SearchFilter]
     ordering_fields = ['name','price']
     ordering = ['price']
     search_fields = ['^name']
     filterset_fields = ['name','price']
-
+    # pagination_class = LimitOffsetPagination
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
