@@ -6,7 +6,6 @@ class Kiyimlar(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField()
     content = models.TextField(default="")
-    image = models.ImageField()
     size = models.IntegerField(default=0)
     number = models.IntegerField(default=0)
     category = models.ForeignKey('Category', related_name="category", on_delete=models.PROTECT)
