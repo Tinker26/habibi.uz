@@ -2,9 +2,9 @@ from django.contrib import admin
 from habibi.models import *
 # Register your models here.
 class KiyimlarAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'image','content','size','number')
+    list_display = ('name', 'price', 'img1','content','size','number')
     list_display_links = ('name',)
-    search_fields = ('name', 'image')
+    search_fields = ('name', 'img1')
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', )
