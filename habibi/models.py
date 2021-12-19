@@ -10,6 +10,10 @@ class Kiyimlar(models.Model):
     size = models.IntegerField(default=0)
     number = models.IntegerField(default=0)
     category = models.ForeignKey('Category', related_name="category", on_delete=models.PROTECT)
+    img1 = models.CharField(max_length=100)
+    img2 = models.CharField(max_length=100)
+    img3 = models.CharField(max_length=100)
+    img4 = models.CharField(max_length=100)
 
     class Meta():
         verbose_name = 'Kiyim'
