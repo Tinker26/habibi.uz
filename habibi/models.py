@@ -40,7 +40,7 @@ class Aloqa(models.Model):
     name = models.CharField(max_length=100)
     Email = models.EmailField()
     subject = models.CharField(max_length=300)
-    massage = models.TextField(default=0)
+    number = models.IntegerField()
     
     class Meta():
         ordering = ['name']
